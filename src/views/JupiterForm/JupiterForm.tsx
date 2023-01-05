@@ -116,9 +116,21 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
 
   const [timeDiff, setTimeDiff] = useState(lastRefreshTimestamp);
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const intervalId = setInterval(async() => {
       if (loading) return;
-
+      
+      setFormValue((val) => ({
+        ...formValue,
+        inputMint: new PublicKey(INPUT_MINT_ADDRESS),
+      }));
+      setBonkin(
+        {
+          feeBps: 138, //burnhalf
+          feeAccounts: await getPlatformFeeAccounts(
+            connection,
+            new PublicKey("Gf3sbc5Jb62jH7WcTr3WSNGDQLk1w6wcKMZXKK1SC1E6") // The platform fee account owner
+          ), // map of mint to token account pubkey
+        })
       const diff = new Date().getTime() - lastRefreshTimestamp;
       setTimeDiff((diff / SECOND_TO_REFRESH) * 100);
 

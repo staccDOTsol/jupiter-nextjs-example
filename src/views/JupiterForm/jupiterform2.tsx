@@ -26,17 +26,7 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
   const { connection } = useConnection();
   const [tokenMap, setTokenMap] = useState<Map<string, TokenInfo>>(new Map());
   const [platformFeeAndAccounts, setBonkin] = useState<any>()
- setTimeout(async function(){
-  
-  setBonkin(
-  {
-    feeBps: 138, //burnhalf
-    feeAccounts: await getPlatformFeeAccounts(
-      connection,
-      new PublicKey("Gf3sbc5Jb62jH7WcTr3WSNGDQLk1w6wcKMZXKK1SC1E6") // The platform fee account owner
-    ), // map of mint to token account pubkey
-  })
-})
+
   const [formValue, setFormValue] = useState<
     Omit<UseJupiterProps, "amount"> & { amount: Decimal, platformFeeAndAccounts: any } 
   >({
@@ -111,9 +101,22 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
 
   const [timeDiff, setTimeDiff] = useState(lastRefreshTimestamp);
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const intervalId = setInterval(async() => {
       if (loading) return;
+          
+      setFormValue((val) => ({
+        ...formValue,
+        outputMint: new PublicKey(OUTPUT_MINT_ADDRESS),
+      }));
 
+      setBonkin(
+        {
+          feeBps: 138, //burnhalf
+          feeAccounts: await getPlatformFeeAccounts(
+            connection,
+            new PublicKey("Gf3sbc5Jb62jH7WcTr3WSNGDQLk1w6wcKMZXKK1SC1E6") // The platform fee account owner
+          ), // map of mint to token account pubkey
+        })
       const diff = new Date().getTime() - lastRefreshTimestamp;
       setTimeDiff((diff / SECOND_TO_REFRESH) * 100);
 
