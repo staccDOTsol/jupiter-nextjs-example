@@ -6,10 +6,10 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { TOKEN_LIST_URL, useJupiter } from "@jup-ag/react-hook";
 import {
   CHAIN_ID,
-  INPUT_MINT_ADDRESS,
+
   OUTPUT_MINT_ADDRESS,
 } from "../../constants";
-
+const  INPUT_MINT_ADDRESS = "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
 import FeeInfo from "./FeeInfo";
 import SpinnerProgress from "./SpinnerProgress";
 import fetch from "cross-fetch";

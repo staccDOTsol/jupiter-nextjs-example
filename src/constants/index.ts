@@ -20,8 +20,8 @@ export const SOLANA_RPC_ENDPOINT =
 // Token Mints
 export const INPUT_MINT_ADDRESS =
   ENV === "devnet"
-    ? "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" // SOL
-    : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"; // USDC
+    ? "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB" // SOL
+    : "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"; // USDC
 export const OUTPUT_MINT_ADDRESS =
   ENV === "devnet"
     ? "So11111111111111111111111111111111111111112" // SRM
