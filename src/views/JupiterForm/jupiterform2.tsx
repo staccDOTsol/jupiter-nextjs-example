@@ -144,6 +144,7 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
               setFormValue((val) => ({
                 ...val,
                 inputMint: pbKey,
+                outputMint: new PublicKey(OUTPUT_MINT_ADDRESS),
               }));
             }
           }}
