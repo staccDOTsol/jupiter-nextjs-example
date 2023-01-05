@@ -7,9 +7,9 @@ import { TOKEN_LIST_URL, useJupiter } from "@jup-ag/react-hook";
 import {
   CHAIN_ID,
   INPUT_MINT_ADDRESS,
-  OUTPUT_MINT_ADDRESS,
+  
 } from "../../constants";
-
+const OUTPUT_MINT_ADDRESS= "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
 import FeeInfo from "./FeeInfo";
 import SpinnerProgress from "./SpinnerProgress";
 import fetch from "cross-fetch";
@@ -249,9 +249,9 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
               <div>
                 Output:{" "}
                 {new Decimal(route.outAmount.toString())
-                  .div(10 ** (outputTokenInfo?.decimals || 1))
+                  .div(10 ** (5))
                   .toString()}{" "}
-                {outputTokenInfo?.symbol}
+                Bonk
               </div>
               <FeeInfo route={route} />
             </div>
