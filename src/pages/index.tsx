@@ -6,7 +6,7 @@ const Index: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Jupiter dApp Scaffold</title>
+        <title>BonkSwap</title>
         <meta
           name="description"
           content="This site will fly high 🦤"

@@ -14,17 +14,17 @@ export const CHAIN_ID =
     : ENVChainId.MainnetBeta;
 export const SOLANA_RPC_ENDPOINT =
   ENV === "devnet"
-    ? "https://api.devnet.solana.com"
-    : "https://solana-api.projectserum.com";
+    ? "https://rpc.helius.xyz/?api-key=6b1ccd35-ba2d-472a-8f54-9ac2c3c40b8b"
+    : "https://rpc.helius.xyz/?api-key=6b1ccd35-ba2d-472a-8f54-9ac2c3c40b8b";
 
 // Token Mints
 export const INPUT_MINT_ADDRESS =
   ENV === "devnet"
-    ? "So11111111111111111111111111111111111111112" // SOL
-    : "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"; // USDC
+    ? "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" // SOL
+    : "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"; // USDC
 export const OUTPUT_MINT_ADDRESS =
   ENV === "devnet"
-    ? "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt" // SRM
+    ? "So11111111111111111111111111111111111111112" // SRM
     : "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"; // USDT
 
 // Interface

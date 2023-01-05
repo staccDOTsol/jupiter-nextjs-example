@@ -21,7 +21,7 @@ import { getPlatformFeeAccounts } from "@jup-ag/core";
 interface IJupiterFormProps {}
 type UseJupiterProps = Parameters<typeof useJupiter>[0];
 
-const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
+const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
   const wallet = useWallet();
   const { connection } = useConnection();
   const [tokenMap, setTokenMap] = useState<Map<string, TokenInfo>>(new Map());
@@ -88,12 +88,8 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
     lastRefreshTimestamp,
   } = useJupiter({ ...formValue, amount: amountInInteger });
 
-  const validOutputMints = useMemo(
-    () => routeMap.get(formValue.inputMint?.toBase58() || "") || allTokenMints,
-    [routeMap, formValue.inputMint?.toBase58()]
-  );
-  const input = ["DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"]
-
+  const validOutputMints = ["DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"]
+  
 
   // ensure outputMint can be swapable to inputMint
   useEffect(() => {
@@ -151,7 +147,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
             }
           }}
         >
-          {input
+          {allTokenMints
             .map((tokenMint) => {
               const found = tokenMap.get(tokenMint);
 
@@ -310,4 +306,4 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
   );
 };
 
-export default JupiterForm;
+export default JupiterForm2;

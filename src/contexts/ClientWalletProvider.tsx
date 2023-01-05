@@ -31,24 +31,7 @@ export function ClientWalletProvider(
 ): JSX.Element {
   const wallets = useMemo(
     () => [
-      new BitKeepWalletAdapter(),
-      new BitpieWalletAdapter(),
-      new BloctoWalletAdapter(),
-      new CloverWalletAdapter(),
-      new Coin98WalletAdapter(),
-      new CoinhubWalletAdapter(),
-      new GlowWalletAdapter(),
-      new MathWalletAdapter(),
-      new SlopeWalletAdapter(),
-      new TorusWalletAdapter(),
-      new LedgerWalletAdapter(),
-      new SolletWalletAdapter(),
-      new SolongWalletAdapter(),
       new PhantomWalletAdapter(),
-      new SafePalWalletAdapter(),
-      new SolflareWalletAdapter(),
-      new TokenPocketWalletAdapter(),
-      new SolletExtensionWalletAdapter(),
     ],
     []
   );

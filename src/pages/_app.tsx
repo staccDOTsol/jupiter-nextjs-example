@@ -14,7 +14,7 @@ import { JupiterProvider } from "@jup-ag/react-hook";
 export const SECOND_TO_REFRESH = 30 * 1000;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const endpoint = useMemo(() => "https://ssc-dao.genesysgo.net/", []);
+  const endpoint = useMemo(() => "https://rpc.helius.xyz/?api-key=6b1ccd35-ba2d-472a-8f54-9ac2c3c40b8b", []);
 
   return (
     <ConnectionProvider endpoint={endpoint}>
