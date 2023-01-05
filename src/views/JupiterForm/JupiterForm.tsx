@@ -101,8 +101,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
       const possibleOutputs = routeMap.get(formValue.inputMint.toBase58());
 
       if (
-      (formValue.inputMint?.toBase58() == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" || formValue.outputMint?.toBase58() == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263")
-        && possibleOutputs &&
+      possibleOutputs &&
         !possibleOutputs?.includes(formValue.outputMint?.toBase58() || "")
       ) {
         
@@ -136,33 +135,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
         <label htmlFor="inputMint" className="block text-sm font-medium">
           Input token
         </label>
-        <select
-          id="inputMint"
-          name="inputMint"
-          className="mt-1 bg-neutral block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-          value={formValue.inputMint?.toBase58()}
-          onChange={(e) => {
-            const pbKey = new PublicKey(e.currentTarget.value);
-            if (pbKey) {
-              setFormValue((val) => ({
-                ...val,
-                inputMint: pbKey,
-              }));
-            }
-          }}
-        >
-          {input
-            .map((tokenMint) => {
-              const found = tokenMap.get(tokenMint);
-
-              return (
-                <option key={tokenMint} value={tokenMint}>
-                  {found ? found.symbol : tokenMint}
-                </option>
-              );
-            })
-            .filter(Boolean)}
-        </select>
+        Bonk
       </div>
 
       <div className="mb-2">
