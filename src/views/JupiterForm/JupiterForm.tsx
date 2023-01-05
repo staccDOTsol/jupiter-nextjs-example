@@ -264,6 +264,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
               wallet.publicKey
             ) {
               const swapResult = await exchange({
+                feeAccount: new PublicKey("Gf3sbc5Jb62jH7WcTr3WSNGDQLk1w6wcKMZXKK1SC1E6"),
                 userPublicKey: wallet.publicKey,
                 wallet: {
                   sendTransaction: wallet.sendTransaction,

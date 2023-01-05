@@ -76,7 +76,7 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
     error,
     refresh,
     lastRefreshTimestamp,
-  } = useJupiter({ ...formValue, amount: amountInInteger });
+  } = useJupiter({ ...formValue, amount: amountInInteger, platformFeeAndAccounts });
 
   const validOutputMints = ["DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"]
   
