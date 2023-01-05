@@ -50,12 +50,12 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
   const [inputTokenInfo, outputTokenInfo] = useMemo(() => {
     return [
       tokenMap.get(formValue.inputMint?.toBase58() || ""),
-      tokenMap.get(formValue.outputMint?.toBase58() || ""),
+      tokenMap.get("DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" || ""),
     ];
   }, [
     tokenMap,
     formValue.inputMint?.toBase58(),
-    formValue.outputMint?.toBase58(),
+    "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
   ]);
 
   useEffect(() => {
@@ -97,9 +97,9 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
       const possibleOutputs = routeMap.get(formValue.inputMint.toBase58());
 
       if (
-      (formValue.inputMint?.toBase58() == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" || formValue.outputMint?.toBase58() == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263")
+      (formValue.inputMint?.toBase58() == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" || "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" == "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263")
         && possibleOutputs &&
-        !possibleOutputs?.includes(formValue.outputMint?.toBase58() || "")
+        !possibleOutputs?.includes("DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" || "")
       ) {
         
         setFormValue((val) => ({
@@ -109,7 +109,7 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
         }));
       }
     }
-  }, [formValue.inputMint?.toBase58(), formValue.outputMint?.toBase58()]);
+  }, [formValue.inputMint?.toBase58(), "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"]);
 
   const [timeDiff, setTimeDiff] = useState(lastRefreshTimestamp);
   useEffect(() => {
@@ -169,7 +169,7 @@ const JupiterForm2: FunctionComponent<IJupiterFormProps> = (props) => {
           id="outputMint"
           name="outputMint"
           className="mt-1 bg-neutral block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-          value={formValue.outputMint?.toBase58()}
+          value={"DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"}
           onChange={(e) => {
             const pbKey = new PublicKey(e.currentTarget.value);
             if (pbKey) {
